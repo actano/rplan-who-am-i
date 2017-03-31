@@ -15,7 +15,7 @@ function getDisplayNameFromToken(token) {
   return payload && payload.displayName
 }
 
-export default function getDisplayNameOfCurrentUser() {
+export function getDisplayNameOfCurrentUser() {
   const token = cookie(COOKIE_NAME)
   return getDisplayNameFromToken(token) || status(token)
 }
