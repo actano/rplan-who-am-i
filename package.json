@@ -1,12 +1,16 @@
 {
   "name": "rplan-who-am-i",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "main": "index.js",
   "browser": "dist/index.js",
   "license": "MIT",
   "scripts": {
     "prepublish": "gulp"
   },
+  "files": [
+    "dist",
+    "lib"
+  ],
   "dependencies": {
     "component-cookie": "^1.1.3",
     "jwt-decode": "^2.2.0"
