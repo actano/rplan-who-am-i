@@ -19,3 +19,5 @@ export default function getDisplayNameOfCurrentUser() {
   const token = cookie(COOKIE_NAME)
   return getDisplayNameFromToken(token) || status(token)
 }
+
+export { COOKIE_NAME }
