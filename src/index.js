@@ -15,9 +15,23 @@ function getDisplayNameFromToken(token) {
   return payload && payload.displayName
 }
 
-export function getDisplayNameOfCurrentUser() {
+function getDisplayNameOfCurrentUser() {
   const token = cookie(COOKIE_NAME)
   return getDisplayNameFromToken(token) || status(token)
 }
 
-export { COOKIE_NAME }
+function getIdFromToken(token) {
+  const payload = decodeToken(token)
+  return payload && payload.sub
+}
+
+function getIdOfCurrentUser() {
+  const token = cookie(COOKIE_NAME)
+  return getIdFromToken(token)
+}
+
+export {
+  COOKIE_NAME,
+  getDisplayNameOfCurrentUser,
+  getIdOfCurrentUser,
+}
