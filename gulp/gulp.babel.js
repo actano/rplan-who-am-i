@@ -1,12 +1,11 @@
 import gulp from 'gulp'
 import babel from 'gulp-babel'
 
-const TASK_NAME = 'babel'
-
-gulp.task(TASK_NAME, () =>
+const babelTask = () =>
   gulp.src('src/*.js')
     .pipe(babel())
-    .pipe(gulp.dest('lib')),
-)
+    .pipe(gulp.dest('lib'))
 
-export default TASK_NAME
+export {
+  babelTask as babel,
+}

@@ -1,2 +1,2 @@
 root: true
-extends: actano
+extends: actano-base
