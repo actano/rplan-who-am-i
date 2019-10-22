@@ -10,11 +10,13 @@
   },
   "files": [
     "dist",
-    "lib"
+    "lib",
+    "testhelper"
   ],
   "dependencies": {
     "component-cookie": "^1.1.4",
-    "jwt-decode": "^2.2.0"
+    "jwt-decode": "^2.2.0",
+    "sinon": "^7.5.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.4",

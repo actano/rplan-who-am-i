@@ -15,19 +15,29 @@ function status(token) {
   return null
 }
 
+const currentUserProvider = {
+  getDisplayName() {
+    const token = cookie(COOKIE_NAME)
+    const payload = getPayload()
+    const displayName = payload && payload.displayName
+    return displayName || status(token)
+  },
+  getId() {
+    const payload = getPayload()
+    return payload && payload.sub
+  },
+}
+
 function getDisplayNameOfCurrentUser() {
-  const token = cookie(COOKIE_NAME)
-  const payload = getPayload()
-  const displayName = payload && payload.displayName
-  return displayName || status(token)
+  return currentUserProvider.getDisplayName()
 }
 
 function getIdOfCurrentUser() {
-  const payload = getPayload()
-  return payload && payload.sub
+  return currentUserProvider.getId()
 }
 
 export {
   getDisplayNameOfCurrentUser,
   getIdOfCurrentUser,
+  currentUserProvider,
 }
